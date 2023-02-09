@@ -1,49 +1,85 @@
-# playWithPython
+# Introduction to Machine Learning
+Machine Learning is a subset of Artificial Intelligence that focuses on the development of algorithms and models that enable machines to improve their performance in a specific task through experience. In simple words, it allows computers to learn and make predictions based on data input, without being explicitly programmed.
 
-The Repo is for Machine Learning lovers....
+#Prerequisites
 
-Machine Learning is said as a subset of artificial intelligence that is mainly concerned with the development of algorithms which allow a computer to learn from the data and past experiences on their own
-
-
--K means Clustering(On Iris DataSet)
-
-K-means is a popular clustering algorithm that aims to partition a set of points into K clusters, where each cluster is represented by its centroid. In this documentation, we will walk through the steps of applying K-means clustering on the Iris dataset. The Iris dataset consists of 150 instances and 4 features (sepal length, sepal width, petal length, petal width).
-
-Step 1: Load the Iris dataset
-We start by loading the Iris dataset into our Python environment. This can be done using the sci-kit learn library.
-
-from sklearn import datasets
-iris = datasets.load_iris()
-
-Step 2: Preprocessing the data
-Before applying K-means, we need to preprocess the data by normalizing it. Normalization helps to ensure that each feature contributes equally to the clustering process.
-
-from sklearn import preprocessing
-x = iris.data
-scaler = preprocessing.StandardScaler()
-x_scaled = scaler.fit_transform(x)
-
-Step 3: Apply K-means
-We use the KMeans class from sci-kit learn to apply K-means on the Iris dataset. We set the number of clusters to 3, which is the number of target classes in the Iris dataset.
-
-from sklearn.cluster import KMeans
-kmeans = KMeans(n_clusters=3, init='k-means++')
-kmeans.fit(x_scaled)
-
-Step 4: Evaluate the Clustering
-To evaluate the clustering, we can use the inertia_ attribute, which returns the sum of squared distances of samples to their closest cluster center. A lower inertia value indicates a better clustering result.
-
-print("Inertia: ", kmeans.inertia_)
-
-Step 5: Visualize the Clustering
-We can use a scatter plot to visualize the clustering result. The scatter plot shows the 150 instances and color-codes each instance according to its cluster assignment.
+Before diving into the world of Machine Learning, it is important to have a good understanding of:
 
 
-import matplotlib.pyplot as plt
-import seaborn as sns
-sns.set()
+-Statistics
 
-plt.scatter(x_scaled[:, 0], x_scaled[:, 1], c=kmeans.labels_)
-plt.xlabel('Sepal Length')
-plt.ylabel('Sepal Width')
-plt.show()
+-Linear Algebra
+
+-Calculus
+
+-Python programming
+
+-Tools and Libraries
+
+
+There are a number of tools and libraries available for implementing Machine Learning algorithms, some of the popular ones are:
+
+-Python's scikit-learn library
+
+-TensorFlow
+
+-Keras
+
+-PyTorch
+
+
+# Types of Machine Learning
+
+There are three main types of Machine Learning:
+
+
+-Supervised Learning
+
+-Unsupervised Learning
+
+-Reinforcement Learning
+
+
+# Supervised Learning
+
+
+In Supervised Learning, the algorithms are trained on a labeled dataset, where the correct output is already known. The goal is to train the model to make accurate predictions on new data. Some examples of Supervised Learning algorithms include:
+
+
+Linear Regression
+
+Logistic Regression
+
+Decision Trees
+
+Random Forest
+
+
+
+# Unsupervised Learning
+
+
+In Unsupervised Learning, the algorithms are trained on an unlabeled dataset, where the correct output is not known. The goal is to find patterns and relationships within the data. Some examples of Unsupervised Learning algorithms include:
+
+
+K-Means Clustering
+
+Principal Component Analysis (PCA)
+
+Autoencoders
+
+
+# Reinforcement Learning
+
+
+In Reinforcement Learning, the algorithms learn from trial and error, where the goal is to maximize a reward signal. The algorithms interact with an environment, receiving rewards or penalties based on their actions. Some examples of Reinforcement Learning algorithms include:
+
+
+Q-Learning
+
+SARSA
+
+
+# Conclusion
+
+Machine Learning is a powerful tool that can be used for a wide range of applications, from image and speech recognition to natural language processing and game AI. Understanding the basics of the different types of Machine Learning, and having knowledge of the popular tools and libraries, will help you get started with building your own Machine Learning models.
